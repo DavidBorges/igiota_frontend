@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Igiota</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tooplate.css">
+</head>
+
+<body id="reportsPage">
+    <div class="" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                        <a class="navbar-brand" href="index.html">
+                            <!-- <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i> -->
+                            <h1 class="tm-site-title mb-0">Igiota</h1>
+                        </a>
+                        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="index.html">Painel
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Débitos
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">A pagar</a>
+                                        <a class="dropdown-item" href="#">A receber</a>
+                                        <a class="dropdown-item" href="historico.html">Histórico de atividades</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grupos.html">Grupos</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="amigos.html">Amigos</a>
+                                </li>
+
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a id="conta" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="far fa-user mr-2 tm-logout-icon"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="conta.html">Gerenciar conta</a>
+                                        <a id='btnLogout' class="dropdown-item" href="">Sair</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row tm-content-row tm-mt-big">
+                <div class="col-xl-6 col-lg-12 col-12 tm-col tm-col-mid">
+                    <div class="bg-white tm-block h-100">
+                        <div class="row">
+                            <div class="col-5">
+                                <h2 class="tm-block-title d-inline-block">Preciso pagar</h2>
+
+                            </div>
+                            <div class="col-7 tm-btn-right">
+                                <h2 id="somaPagar"class="tm-block-title d-inline-block">R$ 00,00</h2>
+                                <button id='btnaddDivida' type="button" class="btn btn-danger btn-sm">+</button>
+                            </div>
+                            
+                        </div>
+                        <ol id="listaPagar" class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
+                            
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-12 tm-col tm-col-mid">
+                    <div class="bg-white tm-block h-100">
+                        <div class="row">
+                            <div class="col-5">
+                                <h2 class="tm-block-title d-inline-block">Vou receber</h2>
+
+                            </div>
+                            <div class="col-7 tm-btn-right">
+                                <h2 id='somaReceber' class="tm-block-title d-inline-block">R$ 00,00</h2>
+                                <button id='btnaddPagamento' type="button" class="btn btn-outline-success btn-sm">+</button>
+                            </div>
+                        </div>
+                        <ol id="listaReceber" class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
+                            
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <footer class="row tm-mt-big">
+                <div class="col-12 font-weight-light text-center">
+                    <p class="d-inline-block tm-bg-black text-white py-2 px-4">
+                        IGIOTA 2020
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Modal container -->
+    <div class="modal fade" id="modalContainer">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bordaModal">
+                <div id='modalHeader' class="modal-header">
+
+                </div>
+                <div id='modalBody' class="modal-body">
+
+                </div>
+                <div id='modalFooter' class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal add Divida-->
+    <div class="modal fade" id="modalAddDivida">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content bordaModal">
+                <div class="modal-header">
+                    Adicionando uma dívida de:
+                </div>
+                <div class="modal-body">
+                    <form id='formAddDivida' class="tm-login-form">
+                        <div class="input-group">
+                            <label for="valor" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Valor:
+                            </label>
+                            <input name="valor" type="text"
+                                class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="valor" value=""
+                                required>
+                        </div>
+                        <div class="input-group mt-3">
+                            <label for="selectCredor" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Credor: </label>
+                                <select class="form-control col-xl-9 col-lg-8 col-md-8 col-sm-7" name="credor" id="selectCredor" required>
+                                                        
+                                </select>
+                        </div>
+                        <div class="input-group mt-3">
+                            <button type="submit"
+                                class="btn btn-outline-success d-inline-block mx-auto">Confirmar</button>
+
+                            <button id="btnCancelAddDiviva" type="button"
+                                class="btn btn-danger d-inline-block mx-auto">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal add Pagamento-->
+    <div class="modal fade" id="modalAddPagamento">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content bordaModal">
+                <div class="modal-header">
+                    Fazer um Pagamento de:
+                </div>
+                <div class="modal-body">
+                    <form id='formAddPagamento' class="tm-login-form">
+                        <div class="input-group">
+                            <label for="valor" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Valor:
+                            </label>
+                            <input name="valor" type="text"
+                                class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="valor" value=""
+                                required>
+                        </div>
+                        <div class="input-group mt-3">
+                            <label for="selectDebts" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Dívida: </label>
+                            <select class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" name="pagamento" id="selectDebts" required>
+                                                    
+                            </select>
+                        </div>
+                        <div class="input-group mt-3">
+                            <button type="submit"
+                                class="btn btn-outline-success d-inline-block mx-auto">Confirmar</button>
+
+                            <button id="btnCancelAddPagamento" type="button"
+                                class="btn btn-danger d-inline-block mx-auto">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tooplate-scripts.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/navbar.js"></script>
+
+</body>
+
+</html>

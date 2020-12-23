@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grupos - Igiota</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tooplate.css">
+</head>
+
+<body id="reportsPage" class="bg01">
+    <div class="" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                        <a class="navbar-brand" href="index.html">
+                            <!-- <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i> -->
+                            <h1 class="tm-site-title mb-0">Igiota</h1>
+                        </a>
+                        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="index.html">Painel
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Débitos
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">A pagar</a>
+                                        <a class="dropdown-item" href="#">A receber</a>
+                                        <a class="dropdown-item" href="historico.html">Histórico de atividades</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grupos.html">Grupos</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="amigos.html">Amigos</a>
+                                </li>
+
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a id="conta" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="far fa-user mr-2 tm-logout-icon"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="conta.html">Gerenciar conta</a>
+                                        <a id='btnLogout' class="dropdown-item" href="">Sair</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row tm-content-row tm-mt-big">
+                <div class="col-xl-4 col-lg-4 col-md-5 col-12 tm-col">
+                    <div class="bg-white tm-block h-100" data-toggle="modal" data-target="#ModalGrupo"> 
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="tm-block-title d-inline-block">Apartamento</h2>
+
+                            </div>
+                            <div class="col-5">
+                                <h2 class="tm-block-title d-inline-block">$20.900,00</h2>
+
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-5 col-12 tm-col">
+                    <div class="bg-white tm-block h-100" data-toggle="modal" data-target="#ModalGrupo">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="tm-block-title d-inline-block">Água</h2>
+
+                            </div>
+                            <div class="col-5">
+                                <h2 class="tm-block-title d-inline-block">$20.900,00</h2>
+
+                            </div>
+                        </div>                       
+                    </div>
+                </div>                
+                <div class="col-xl-4 col-lg-4 col-md-5 col-12 tm-col">
+                    <div class="tm-block h-100" data-toggle="modal" data-target="#ModalGrupo">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <button type="button" class="btn btn-success">+</button>
+                                
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+            </div>            
+            <footer class="row tm-mt-big">
+                <div class="col-12 font-weight-light text-center">
+                    <p class="d-inline-block tm-bg-black text-white py-2 px-4">
+                        IGIOTA 2020
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="ModalGrupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <!-- scripts importados-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tooplate-scripts.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+
+</html>

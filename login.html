@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login - Igiota</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tooplate.css">
+</head>
+
+<body class="bg01">
+    <!--Container para formulário de login-->
+    <div class="container">
+        <div id="login" class="row tm-mt-big">
+            <div class="col-12 mx-auto tm-login-col">
+                <div class="bg-white tm-block">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="tm-block-title mt-3">Bem-vindo(a) ao Igiota</h2>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <form id= 'formLogin' class="tm-login-form">
+                                <div class="input-group">
+                                    <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">E-mail</label>
+                                    <input name="username" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username"  required>
+                                </div>
+                                <div class="input-group mt-3">
+                                    <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Senha</label>
+                                    <input name="password" type="password" class="form-control validate" id="password"  required>
+                                </div>
+                                <div class="input-group mt-3">
+                                    <p class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-form-label"></p>
+                                    <button type="submit" class="btn btn-primary d-inline-block mx-auto">Entrar</button>
+                                    ou
+                                    <button id= "btnCadastro" type="button" class="btn btn-primary d-inline-block mx-auto">Cadastrar</button>
+                                </div>                    
+                                <div class="input-group mt-3">
+                                    <p><em>Informe um endereço de e-mail e senha para ter acesso</em></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Container para formulário de cadastro-->
+        <div id="cadastro" class="row tm-mt-big" style="display: none;">
+            <div class="col-12 mx-auto tm-login-col">
+                <div class="bg-white tm-block">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2 class="tm-block-title mt-3">Cadastro</h2>        
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <form id='formCadastro' class="tm-login-form">
+                                <div class="input-group">
+                                    <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Nome</label>
+                                    <input name="username" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" value="" required>
+                                </div>
+                                <div class="input-group mt-3">
+                                    <label for="email" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">E-mail</label>
+                                    <input name="email" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="email" value="" required>
+                                </div>
+                                <div class="input-group mt-3">
+                                    <label for="phone" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Telefone</label>
+                                    <input name="phone" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="phone" value="" required>
+                                </div>
+                                <div class="input-group mt-3">
+                                    <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Senha</label>
+                                    <input name="password" type="password" class="form-control validate" id="password" value="" required>
+                                </div>
+                                <div class="input-group mt-3">
+                                    <label for="password2" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Confirmar Senha</label>
+                                    <input name="password2" type="password" class="form-control validate" id="password2" value="" required>
+                                </div>
+                                <div class="input-group mt-3">
+                                    <button type="submit" class="btn btn-outline-success d-inline-block mx-auto">Cadastrar</button>
+                                    
+                                    <button id="btnCancelCadastro"type="button" class="btn btn-danger d-inline-block mx-auto">Cancelar</button>
+                                </div>            
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="row tm-mt-big">
+            <div class="col-12 font-weight-light text-center">
+                <p class="d-inline-block tm-bg-black text-white py-2 px-4">
+                    IGIOTA 2020
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- Modal para confirmar o cancelamento de um cadastro -->
+    <div class="modal fade" id="modalContainer">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content bordaModal">        
+                <div id='modalBody' class="modal-body">
+                    
+                </div>
+                <div id='modalFooter' class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tooplate-scripts.js"></script>
+    <script src="js/login.js"></script>    
+</body>
+
+</html>
